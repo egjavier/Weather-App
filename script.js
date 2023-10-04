@@ -29,9 +29,9 @@ function currentWeather () {
       .then ( data => {
         console.log(data)
         addingMainHTML(data)
+        addingHourlyWeather(data)
       } )
       .catch ( error => console.log(error) )
-
     } )
   } else {
     body.innerHTML = 'Allow location for the website to work.'
@@ -118,7 +118,53 @@ function addingMainHTML(data) {
   temp.appendChild(degrees)
   sunrise.appendChild(sunriseImg)
   sunset.appendChild(sunsetImg)
-  
-  
+}
+
+// adding html to the hourly weather Container
+function addingHourlyWeather(data) {
+  let hourlyWeatherContainer = document.querySelector('.hourlyWeatherContainer')
+
+  // add 24 <div> to hourlyWeatherContainer
+  for (i = 0; i < 24; i++) {
+    hourlyWeatherContainer.innerHTML += `<div class='hourlyContainer' id='time-${data.forecast.forecastday[0].hour[i].time.slice(11)}'></div>`
+  }
+
+  const hourlyContainerAll = document.querySelectorAll('.hourlyContainer')
+
+  // loop though the hourlyContainer to append children
+  hourlyContainerAll.forEach( (e, i) => {
+    // creating variable for data
+    const hourInfo = data.forecast.forecastday[0].hour[i].time.slice(11)
+    const icon = data.forecast.forecastday[0].hour[i].condition.icon
+    const textInfo = data.forecast.forecastday[0].hour[i].condition.text
+    const tempInfo = data.forecast.forecastday[0].hour[i].temp_c
+
+    // creating element for hourly forecast
+    const hourDaily = document.createElement('p')
+    const iconImgDaily = document.createElement('img')
+    const textDaily = document.createElement('p')
+    const tempDaily = document.createElement('p')
+
+    // creating classlist
+    hourDaily.classList.add('hourDaily')
+    iconImgDaily.classList.add('iconImgDaily')
+    textDaily.classList.add('textDaily')
+    tempDaily.classList.add('tempDaily')
+
+    // add content to the element
+    hourDaily.innerHTML = hourInfo
+    iconImgDaily.src = icon
+    textDaily.innerHTML = textInfo
+    tempDaily.innerHTML = `${tempInfo} ℃`
+
+    e.appendChild(hourDaily)
+    e.appendChild(iconImgDaily)
+    e.appendChild(textDaily)
+    e.appendChild(tempDaily)
+  })
+}
+
+const hourDaily = document.querySelector('hourDaily')
+if (hourDaily => hourDaily + 1) {
 
 }
