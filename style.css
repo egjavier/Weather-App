@@ -138,6 +138,7 @@ footer {
 }
 
 /* hourlyContainer Style */
+/* horizontal scroll */
 .hourlyWeatherContainer {
   display: grid;
   grid-template-columns: repeat(24, 25%);;
@@ -151,6 +152,9 @@ footer {
   overflow: auto;
   white-space: nowrap;
 }
+.hourlyWeatherContainer::-webkit-scrollbar {
+  width: 0 !important
+  }
 .hourlyContainer {
     display: flex;
     flex-direction: column;
@@ -185,6 +189,8 @@ footer {
   position: absolute;
   font: 400 2.5vw 'Young Serif', serif;
   bottom: 0;
+  left: 1vw;
+  right: 1vw;
   display: flex;
   align-items: center;
   justify-content: center;
