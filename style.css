@@ -40,7 +40,7 @@ header {
 main {
   display: grid;
   grid-template-columns: repeat(2, 47%);
-  width: 65vw;
+  width: 90vw;
   border-radius: 1vw;
   background-color: rgba(2, 0, 36, 0.388);
   padding: 3vw;
@@ -142,7 +142,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(24, 25%);;
   column-gap: 2vw;
-  width: 65vw;
+  width: 90vw;
   border-radius: 1vw;
   background-color: rgba(2, 0, 36, 0.388);
   padding: 3vw;
