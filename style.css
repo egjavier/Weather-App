@@ -5,9 +5,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  position: relative;
-}
+html { position: relative}
 body {
   min-height: 100vh;
   background-color: rgb(2,0,36);
@@ -20,21 +18,7 @@ header {
   width: fit-content;
   background-color: rgba(2, 0, 36, 0.388);
 }
-#title {
-  font: 400 3vw 'Young Serif', serif;
-}
-
-/* current and forecast buttons */
-.btn {
-  border-radius: 1vw;
-  font: 400 1.5vw 'Poppins', serif;
-}
-.btn:hover {
-  background-color: rgb(2,0,36);
-}
-#currentBtn {
-  margin-right: 2vw;
-}
+#title { font: 400 5vw 'Young Serif', serif }
 
 /* main weather conatiner */
 main {
@@ -56,13 +40,9 @@ main {
   display: flex;
   flex-direction: column;
 }
-.tempContainer {
-  position: relative;
-}
+.tempContainer { position: relative }
 .city, .country, .date { margin: 0 }
-.city {
-  font: 400 3.5vw 'Young Serif', serif;
-}
+.city { font: 400 3.5vw 'Young Serif', serif }
 .country {
   font: 400 2vw poppins;
   margin-bottom: 1.5vh;
@@ -96,9 +76,7 @@ main {
   background-color: rgb(2,0,36);
   box-shadow: 2px 5px 5px rgba(2, 0, 36, 0.388);
 }
-.degrees {
-  font: 400 5vw 'Young Serif', serif;
-}
+.degrees { font: 400 5vw 'Young Serif', serif }
 .sunrise, .sunset {
   display: flex;
   flex-direction: row-reverse;
@@ -152,9 +130,7 @@ footer {
   overflow: auto;
   white-space: nowrap;
 }
-.hourlyWeatherContainer::-webkit-scrollbar {
-  width: 0 !important
-  }
+.hourlyWeatherContainer::-webkit-scrollbar { width: 0 !important }
 .hourlyContainer {
     display: flex;
     flex-direction: column;
@@ -200,3 +176,49 @@ footer {
 
 }
 
+@media screen and (max-width: 400px) {
+
+  /* main */
+  .city { font: 400 6vw 'Young Serif', serif }
+  .country {
+    font: 400 3vw poppins;
+    font-style: italic;
+  }
+  .date {
+    font: 500 3vw poppins;
+    font-style: italic
+  }
+  .time { font: 500 5vw poppins }
+
+  .tempIcon {
+    width: 15vw;
+    top: 1vw;
+  }
+  .temp { font: 400 16vw 'Young Serif', serif }
+  .tempText { font: 500 3vw poppins }
+  .degrees { font: 400 6vw 'Young Serif', serif }
+  .sunrise, .sunset { font: 700 2.5vw poppins }
+  .sunrise > span,
+  .sunset > span  {
+    font: 500 2.5vw Poppins;
+    font-style: italic;
+  }
+
+  /* hourly weather */
+  .hourlyWeatherContainer {
+    grid-template-columns: repeat(24, 40%);
+    column-gap: 2vw;
+    width: 90vw;
+    height: 50vw;
+  }
+  .hourDaily { font: 700 4vw Poppins }
+  .iconImgDaily { width: 10vw }
+  .textDaily{ font: 500 3vw Poppins }
+  .tempDaily {
+    font: 400 5vw 'Young Serif', serif;
+    bottom: -2vw;
+  }
+
+  /* footer */
+  footer { font: 400 3vw 'Young Serif', serif }
+}

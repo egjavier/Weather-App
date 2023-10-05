@@ -2,13 +2,7 @@ const currentBtn = document.querySelector('#currentBtn')
 const body = document.querySelector('body')
 const main = document.querySelector('main')
 
-window.addEventListener('load', () => {
-  // disable currentBtn when onload
-    currentBtn.style.backgroundColor = 'rgb(2,0,36)'
-    currentBtn.disabled = true
-
-    currentWeather()
-})
+window.addEventListener('load', () => currentWeather())
 
 // fetching api
 function currentWeather () {
@@ -27,7 +21,6 @@ function currentWeather () {
     fetch (api)
       .then ( response => response.json() )
       .then ( data => {
-        console.log(data)
         addingMainHTML(data)
         addingHourlyWeather(data)
       } )
