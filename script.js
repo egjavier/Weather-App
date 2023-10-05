@@ -163,8 +163,3 @@ function addingHourlyWeather(data) {
     e.appendChild(tempDaily)
   })
 }
-
-const hourDaily = document.querySelector('hourDaily')
-if (hourDaily => hourDaily + 1) {
-
-}
